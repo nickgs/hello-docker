@@ -4,13 +4,17 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Hello Docker</title>
+
+		<meta name="description" content="An introduction to Docker">
+		<meta name="author" content="Nick Selvaggio">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="sego/sego_style.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -23,11 +27,145 @@
 	</head>
 	<body>
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>Hello Docker</h2>
+					<p>
+						<small><a href="http://www.nickgs.com">Nick Selvaggio</a> / <a href="http://www.segosolutions.com">www.segosolutions.com</a></small>
+					</p>
+					<img src="https://d3oypxn00j2a10.cloudfront.net/0.16.0/images/pages/brand_guidelines/small_v.png"/>
+				</section>
+
+				<section>
+					<h2>A little about me.</h2>
+				</section>
+
+				<section data-transition="linear" data-background="#527c97" data-background-transition="slide">
+					<h2>A little about you.</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>So what is Docker?</h2>
+						<p>"Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications." <br/>-via Docker.com</p>
+					</section>
+					<section class="light-blue">
+						<h2>Ok what does that mean?</h2>
+						<p>Fundamentally, a usability layer on top of Linux Containers (written in Go)</p>
+						<p><img src ="images/docker-exec-diagram.png"/></p>
+					</section>
+					<section class="light-blue">
+						<h2>Some History</h2>
+						<ul>
+							<li>Started as internal project at DotCloud</li>
+							<li>Open Sourced in March 2013</li>
+							<li>Has large vibrant community</li>
+							<li>1.0 released in June 2014</li>
+							<li>Current release guidance docs:<br/> <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a></li>
+						</ul>
+					</section>
+					<section class="light-blue">
+						<h2>Containers?</h2
+						<p>A way to isolate processes on a host machine without the heavy overhead of a Virtual Machine.</p>
+					</section>
+					<section class="light-blue">
+						<h2>Containers vs Virtual Machines</h2>
+						<p><img src ="images/lxc_vs_vm.jpg"/></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>So why should we care?</h2>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>As developers?</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Develop with production configuration and environments</li>
+							<li>Make it easier to share your application and its surrounding software stack in a light weight fashion</li>
+							<li>Much easier and less stressful trying new technologies.</li>
+						</ul>
+					</section>
+					<section data-background-video="https://videos.platform.sh/platformsh-atmosphere.mp4" data-background="#000000">
+						<h2 class="borderize">Current Workflow</h2>
+						<img src="images/current_workflow.png"/>
+						<p class="borderize">Local Stack Setup --> Pushes to GIT --> Testing Server Runs tests --> If passed code deployed to production</p>
+					</section>
+					<section data-background-video="https://videos.platform.sh/platformsh-atmosphere.mp4" data-background="#000000">
+						<h2 class="borderize">Docker Workflow</h2>
+						<img src="images/docker_workflow.png"/>
+						<p class="borderize">Local Containerized Stack Setup --> Pushes to GIT --> Testing Server Builds image and tests--> Image is pushed to registry --> Built Image deployed to production</p>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>As sysadmins?</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Simple tools to define your containers using Dockerfiles. Dont have to learn a new syntax like Puppet or Chef.</li>
+							<li>Creating test environments and the general portabilty of your infrastructure increases</li>
+							<li>Greater flexibility with scaling applications across different geographical locations and cloud service providers</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-transition="linear" data-background="#527c97" data-background-transition="slide">
+					<section>
+						<h2>How do we use Docker?</h2>
+						<ul>
+							<li>It can be <a href="https://docs.docker.com/install/" target="_blank">installed on all major platforms.</a></li>
+							<li>For Windows and Mac it runs in its own VM</li>
+							<li>The Docker daemon can be accessed via a command line tool OR via the RESTful API.</li>
+						</ul>
+						<img src="images/docker-architecture.png"/>
+					</section>
+					<section>
+						<h2>Images</h2>
+						<p>Used to store your app</p>
+						<hr/>
+						<h2>Containers</h2>
+						<p>Used to run your app</p>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Ok enough talk, lets demo!</h2>
+					</section>
+				</section
+
+				<section>
+					<section>
+						<h2>Further exploration:</h2>
+						<ul>
+							<li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
+							<li><a href="https://docs.docker.com/engine/swarm/swarm-tutorial/">Docker Swarm Mode</a></li>
+							<li><a href="https://docs.docker.com/machine/">Docker Machine</a></li>
+							<li><a href="https://kubernetes.io/">Kubernetes (take it up a notch)</a></li>
+						</ul>
+					</section>
+				<section data-background="#527c97">
+					<section>
+						<h2>Questions?</h2>
+						<p>Code and slides available at:<br/> https://github.com/nickgs</p>
+					</section>
+				</section>
 			</div>
-		</div>
+			<footer class="sego-logo">
+				<a href="http://www.segosolutions.net/"><img src="sego/sego_logo_blkbg.png" alt="Sego Solutions logo" height="50" /></a>
+			</footer>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
